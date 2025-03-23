@@ -11,8 +11,8 @@ Algoritmo cajero_automatico
 	Dimension historial[5]
 	
 	contador_historial <- 1
-    credenciales[1] <- "a" // Usuario correcto
-    credenciales[2] <- "a" // Contraseña correcta
+    credenciales[1] <- "Andres_morales" // Usuario correcto
+    credenciales[2] <- "aA16" // ContraseÃ±a correcta
 	
 	intentos <- 3
 	continuar_credenciales <- Verdadero
@@ -22,7 +22,7 @@ Algoritmo cajero_automatico
 	Mientras intentos > 0 Y continuar_credenciales Hacer
 		Escribir "== Digite su usuario"
 		leer usuario_ingresado
-		Escribir "== Digite su contraseña"
+		Escribir "== Digite su contraseÃ±a"
 		leer contrasena_ingresada
 		
 		si usuario_ingresado = credenciales[1] Y contrasena_ingresada = credenciales[2]
@@ -31,9 +31,9 @@ Algoritmo cajero_automatico
 			si usuario_ingresado = credenciales[1] Y contrasena_ingresada <> credenciales[2]
 				intentos = intentos - 1
 				si intentos > 0 Entonces
-					Escribir "!= Contraseña incorrecta, quedan ", intentos, " intentos"
+					Escribir "!= ContraseÃ±a incorrecta, quedan ", intentos, " intentos"
 				SiNo
-					Escribir "!= Contraseña incorrecta, no quedan intentos"
+					Escribir "!= ContraseÃ±a incorrecta, no quedan intentos"
 					continuar_menu = Falso
 				FinSi
 			SiNo
@@ -67,7 +67,7 @@ Algoritmo cajero_automatico
 					Escribir "Saldo actual : ", saldo[1]
 					
 					Si contador_historial < 5 Entonces
-						historial[contador_historial] <- "Depósito: +" + ConvertirATexto(cantidad_deposito)
+						historial[contador_historial] <- "DepÃ³sito: +" + ConvertirATexto(cantidad_deposito)
 						contador_historial <- contador_historial + 1
 					FinSi
 				SiNo
@@ -76,7 +76,7 @@ Algoritmo cajero_automatico
 					Escribir "Saldo actual : ", saldo[1]
 					
 					Si contador_historial < 5 Entonces
-						historial[contador_historial] <- "Depósito: +" + ConvertirATexto(cantidad_deposito)
+						historial[contador_historial] <- "DepÃ³sito: +" + ConvertirATexto(cantidad_deposito)
 						contador_historial <- contador_historial + 1
 					FinSi
 					
@@ -84,7 +84,7 @@ Algoritmo cajero_automatico
 				
 			Caso 2: // Sacar dinero
 				Escribir ""
-				Escribir "Digita la cantidad a sacar (Solo en múltiplos de 1000): "
+				Escribir "Digita la cantidad a sacar (Solo en mÃºltiplos de 1000): "
 				Leer cantidad_sacar
 				Si cantidad_sacar > 0 Entonces
 					Si cantidad_sacar MOD 1000 = 0 Entonces  
@@ -100,7 +100,7 @@ Algoritmo cajero_automatico
 							Escribir "!= No tienes suficientes fondos"
 						FinSi
 					Sino
-						Escribir "!= La cantidad ingresada no es múltiplo de 1000"
+						Escribir "!= La cantidad ingresada no es mÃºltiplo de 1000"
 					FinSi
 				Sino
 					Escribir "!= La cantidad debe ser mayor a 0"
